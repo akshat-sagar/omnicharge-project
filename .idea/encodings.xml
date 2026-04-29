@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/backend/OmniCharge/APIGateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/OmniCharge/AuthService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/OmniCharge/EurekaServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/OmniCharge/OmniCharge-config-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/OmniCharge/OperatorPlanManagement/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/OmniCharge/PaymentService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/OmniCharge/RechargeProcessing/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/OmniCharge/UserManagement/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/OmniCharge/notification-service/src/main/java" charset="UTF-8" />
+  </component>
+</project>

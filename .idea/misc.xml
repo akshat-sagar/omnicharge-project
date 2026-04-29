@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/SPRINT/OmniCharge/APIGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/SPRINT/OmniCharge/AuthService/pom.xml" />
+        <option value="$PROJECT_DIR$/SPRINT/OmniCharge/EurekaServer/pom.xml" />
+        <option value="$PROJECT_DIR$/SPRINT/OmniCharge/PaymentService/pom.xml" />
+        <option value="$PROJECT_DIR$/SPRINT/OmniCharge/UserManagement/pom.xml" />
+        <option value="$PROJECT_DIR$/SPRINT/OmniCharge/RechargeProcessing/pom.xml" />
+        <option value="$PROJECT_DIR$/SPRINT/OmniCharge/notification-service/pom.xml" />
+        <option value="$PROJECT_DIR$/SPRINT/OmniCharge/OperatorPlanManagement/pom.xml" />
+        <option value="$PROJECT_DIR$/SPRINT/OmniCharge/OmniCharge-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/OmniCharge/RechargeProcessing/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/OmniCharge/PaymentService/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/OmniCharge/OperatorPlanManagement/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/OmniCharge/OmniCharge-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/OmniCharge/notification-service/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/OmniCharge/EurekaServer/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/OmniCharge/AuthService/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/OmniCharge/APIGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/OmniCharge/UserManagement/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="openjdk-24" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
