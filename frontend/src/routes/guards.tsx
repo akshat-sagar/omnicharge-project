@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { fetchProfile } from '../store/slices/authSlice';
-import { PageLoader } from '../components/ui/index';
+import { PageLoader } from '../shared/components/ui';
 
 const getDashboardRoute = (role?: string | null) => (role === 'ADMIN' ? '/admin/dashboard' : '/app/dashboard');
 

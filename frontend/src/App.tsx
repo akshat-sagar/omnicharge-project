@@ -7,26 +7,36 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { store } from './store';
 import AppRoutes from './routes/AppRoutes';
 import './styles/globals.css';
-import { AppThemeProvider, useAppTheme } from './theme/AppThemeProvider';
+import { AppThemeProvider, useAppTheme } from './core/providers/AppThemeProvider';
+import { useAppDispatch, useAppSelector } from './store/hooks';
+import { fetchProfile } from './store/slices/authSlice';
 
 const AppShell: React.FC = () => {
   const { isDark } = useAppTheme();
+  const dispatch = useAppDispatch();
+  const { isAuthenticated, accessToken, user } = useAppSelector((s) => s.auth);
+
+  React.useEffect(() => {
+    if (isAuthenticated && accessToken) {
+      dispatch(fetchProfile());
+    }
+  }, [dispatch, isAuthenticated, accessToken]);
 
   const muiTheme = createTheme({
     palette: {
       mode: isDark ? 'dark' : 'light',
       primary: {
-        main: '#2563eb',
-        light: '#60a5fa',
-        dark: '#1d4ed8',
+        main: '#22c55e',
+        light: '#4ade80',
+        dark: '#15803d',
       },
       background: {
-        default: isDark ? '#020617' : '#f8fafc',
-        paper: isDark ? '#0f172a' : '#ffffff',
+        default: isDark ? '#04130d' : '#f4fbf6',
+        paper: isDark ? '#0b1c15' : '#ffffff',
       },
       text: {
-        primary: isDark ? '#e2e8f0' : '#0f172a',
-        secondary: isDark ? '#94a3b8' : '#475569',
+        primary: isDark ? '#ecfdf5' : '#0f172a',
+        secondary: isDark ? '#a7c4b4' : '#475569',
       },
       error: { main: '#dc2626' },
       success: { main: '#16a34a' },
@@ -35,19 +45,22 @@ const AppShell: React.FC = () => {
     typography: {
       fontFamily: "'DM Sans', system-ui, sans-serif",
     },
+    shape: {
+      borderRadius: 16,
+    },
     components: {
       MuiButton: {
         styleOverrides: {
           root: {
             textTransform: 'none',
             fontWeight: 500,
-            borderRadius: '8px',
+            borderRadius: '999px',
           },
         },
       },
       MuiOutlinedInput: {
         styleOverrides: {
-          root: { borderRadius: '8px' },
+          root: { borderRadius: '16px' },
         },
       },
     },

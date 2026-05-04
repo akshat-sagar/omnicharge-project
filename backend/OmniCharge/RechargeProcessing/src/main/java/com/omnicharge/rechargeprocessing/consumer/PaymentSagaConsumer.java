@@ -89,23 +89,30 @@ public class PaymentSagaConsumer {
 
 
     private RechargeStatus resolveTargetStatus(String eventType) {
-        return switch (eventType) {
-            case "payment.completed" -> RechargeStatus.SUCCESS;
-            case "payment.failed"    -> RechargeStatus.FAILED;
-            case "payment.cancelled" -> RechargeStatus.CANCELLED;
-            default -> {
+        switch (eventType) {
+            case "payment.completed":
+                return RechargeStatus.SUCCESS;
+            case "payment.failed":
+                return RechargeStatus.FAILED;
+            case "payment.cancelled":
+                return RechargeStatus.CANCELLED;
+            default:
                 log.error("Unknown saga event type: {}", eventType);
                 throw new IllegalArgumentException("Unknown saga event type: " + eventType);
-            }
-        };
+        }
     }
 
     private TransactionStatus resolveTransactionStatus(RechargeStatus targetStatus) {
-        return switch (targetStatus) {
-            case SUCCESS -> TransactionStatus.SUCCESS;
-            case FAILED -> TransactionStatus.FAILED;
-            case CANCELLED -> TransactionStatus.CANCELLED;
-            case PENDING -> TransactionStatus.PENDING;
-        };
+        switch (targetStatus) {
+            case SUCCESS:
+                return TransactionStatus.SUCCESS;
+            case FAILED:
+                return TransactionStatus.FAILED;
+            case CANCELLED:
+                return TransactionStatus.CANCELLED;
+            case PENDING:
+            default:
+                return TransactionStatus.PENDING;
+        }
     }
 }

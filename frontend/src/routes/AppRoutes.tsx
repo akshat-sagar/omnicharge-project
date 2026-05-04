@@ -1,37 +1,37 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { PageLoader } from '../components/ui/index';
+import { PageLoader } from '../shared/components/ui';
 import { AdminRoute, GuestRoute, UserRoute } from './guards';
-import MainLayout from '../components/layout/MainLayout';
-import AdminLayout from '../components/layout/AdminLayout';
-import ThemeToggle from '../components/ui/ThemeToggle';
-import LandingPage from '../components/LandingPage';
+import MainLayout from '../layouts/MainLayout';
+import AdminLayout from '../layouts/AdminLayout';
+import ThemeToggle from '../shared/components/ui/ThemeToggle';
+import LandingPage from '../features/landing/pages/LandingPage';
 
-const LoginPage = lazy(() => import('../components/auth/LoginPage'));
-const RegisterPage = lazy(() => import('../components/auth/RegisterPage'));
+const LoginPage = lazy(() => import('../features/auth/pages/LoginPage'));
+const RegisterPage = lazy(() => import('../features/auth/pages/RegisterPage'));
 
 const ForgotPasswordPage = lazy(() =>
-  import('../components/auth/ForgotResetPassword').then((m) => ({
+  import('../features/auth/pages/ForgotResetPassword').then((m) => ({
     default: m.ForgotPasswordPage,
   }))
 );
 const ResetPasswordPage = lazy(() =>
-  import('../components/auth/ForgotResetPassword').then((m) => ({
+  import('../features/auth/pages/ForgotResetPassword').then((m) => ({
     default: m.ResetPasswordPage,
   }))
 );
 
-const DashboardPage = lazy(() => import('../components/dashboard/DashboardPage'));
-const AdminDashboardPage = lazy(() => import('../components/admin/AdminDashboardPage'));
-const RechargePage = lazy(() => import('../components/recharge/RechargePage'));
-const MyRechargesPage = lazy(() => import('../components/recharge/MyRechargesPage'));
-const TransactionsPage = lazy(() => import('../components/recharge/TransactionsPage'));
-const ProfilePage = lazy(() => import('../components/dashboard/ProfilePage'));
+const DashboardPage = lazy(() => import('../features/dashboard/pages/DashboardPage'));
+const AdminDashboardPage = lazy(() => import('../features/admin/pages/AdminDashboardPage'));
+const RechargePage = lazy(() => import('../features/recharge/pages/RechargePage'));
+const MyRechargesPage = lazy(() => import('../features/recharge/pages/MyRechargesPage'));
+const TransactionsPage = lazy(() => import('../features/recharge/pages/TransactionsPage'));
+const ProfilePage = lazy(() => import('../features/dashboard/pages/ProfilePage'));
 
-const AdminUsersPage = lazy(() => import('../components/admin/AdminUsersPage'));
-const AdminOperatorsPage = lazy(() => import('../components/admin/AdminOperatorsPage'));
-const AdminPlansPage = lazy(() => import('../components/admin/AdminPlansPage'));
-const AdminRechargesPage = lazy(() => import('../components/admin/AdminRechargesPage'));
+const AdminUsersPage = lazy(() => import('../features/admin/pages/AdminUsersPage'));
+const AdminOperatorsPage = lazy(() => import('../features/admin/pages/AdminOperatorsPage'));
+const AdminPlansPage = lazy(() => import('../features/admin/pages/AdminPlansPage'));
+const AdminRechargesPage = lazy(() => import('../features/admin/pages/AdminRechargesPage'));
 
 const NotFoundPage: React.FC = () => (
   <div className="min-h-screen flex flex-col items-center justify-center bg-surface-50 p-8">

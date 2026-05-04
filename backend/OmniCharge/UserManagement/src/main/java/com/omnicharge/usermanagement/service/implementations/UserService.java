@@ -103,8 +103,10 @@ public class UserService implements IUserService {
 
     @Override
     @Caching(
-            put   = { @CachePut(value = "user", key = "#userRequestDTO.email") },
-            evict = { @CacheEvict(value = "userList", allEntries = true) }
+            evict = {
+                    @CacheEvict(value = "user", allEntries = true),
+                    @CacheEvict(value = "userList", allEntries = true)
+            }
     )
     public UserResponseDTO updateUser(UserRequestDTO userRequestDTO) {
         Long id = getCurrentUser().getUserId();
@@ -168,8 +170,10 @@ public class UserService implements IUserService {
 
     @Override
     @Caching(
-            put   = { @CachePut(value = "user", key = "#userId") },
-            evict = { @CacheEvict(value = "userList", allEntries = true) }
+            evict = {
+                    @CacheEvict(value = "user", allEntries = true),
+                    @CacheEvict(value = "userList", allEntries = true)
+            }
     )
     public String updateUserRole(Long userId, RoleUpdateDTO roleUpdateDTO) {
         log.info("Updating user role for user ID: {} to role: {}", userId, roleUpdateDTO.getRole());
@@ -185,7 +189,6 @@ public class UserService implements IUserService {
 
 
     @Override
-    @Cacheable(value = "user", key = "#root.target.getAuthenticatedEmail()")
     public UserResponseDTO getCurrentUser() {
         String email = getAuthenticatedEmail();
         log.info("Fetching current logged-in user with email: {}", email);

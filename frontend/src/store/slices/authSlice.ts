@@ -1,13 +1,15 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import type { AxiosError } from 'axios';
-import type { AuthState, UserResponseDTO } from '../../types';
-import { authService } from '../../services/authService';
-import { userService } from '../../services/userService';
-import { clearAuthStorage, tokenStorage, userStorage } from '../../utils/storage';
-import { getErrorMessage } from '../../utils/helpers';
+import type { AuthState, UserResponseDTO } from '../../shared/types';
+import { authService } from '../../core/services/authService';
+import { userService } from '../../core/services/userService';
+import { clearAuthStorage, tokenStorage, userStorage } from '../../core/auth/authStorage';
+import { getErrorMessage } from '../../shared/utils/helpers';
+
+const storedUser = userStorage.getUser();
 
 const initialState: AuthState = {
-  user: userStorage.getUser(),
+  user: storedUser,
   accessToken: tokenStorage.getAccessToken(),
   refreshToken: tokenStorage.getRefreshToken(),
   isAuthenticated: Boolean(tokenStorage.getAccessToken()),

@@ -1,19 +1,19 @@
 .lp-root {
-  --lp-bg: #f8f9fc;
-  --lp-bg2: #ffffff;
-  --lp-bg3: #f0f2f8;
-  --lp-text: #0d1117;
-  --lp-text2: #3d4554;
-  --lp-text3: #6b7588;
-  --lp-border: #e2e6f0;
-  --lp-border2: #d0d5e8;
-  --lp-primary: #1847ed;
-  --lp-primary-h: #0e34c9;
-  --lp-primary-s: #e8eeff;
-  --lp-success: #0d9e6e;
-  --lp-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --lp-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05);
-  --lp-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --lp-bg: #f4fbf6;
+  --lp-bg2: rgba(255, 255, 255, 0.86);
+  --lp-bg3: #eaf5ee;
+  --lp-text: #081611;
+  --lp-text2: #32463d;
+  --lp-text3: #5c7268;
+  --lp-border: rgba(15, 23, 42, 0.08);
+  --lp-border2: rgba(15, 23, 42, 0.12);
+  --lp-primary: #16a34a;
+  --lp-primary-h: #22c55e;
+  --lp-primary-s: #e7f9ee;
+  --lp-success: #10b981;
+  --lp-shadow-sm: 0 1px 3px rgba(1, 10, 6, 0.06), 0 1px 2px rgba(1, 10, 6, 0.04);
+  --lp-shadow-md: 0 6px 18px rgba(1, 10, 6, 0.08), 0 2px 6px rgba(1, 10, 6, 0.05);
+  --lp-shadow-lg: 0 18px 44px rgba(1, 10, 6, 0.12), 0 4px 12px rgba(1, 10, 6, 0.08);
   --lp-font: 'Plus Jakarta Sans', system-ui, sans-serif;
   --lp-font-display: 'Bricolage Grotesque', 'Plus Jakarta Sans', system-ui, sans-serif;
   font-family: var(--lp-font);
@@ -26,21 +26,21 @@
 }
 
 [data-theme='dark'] .lp-root {
-  --lp-bg: #0b0f1a;
-  --lp-bg2: #111827;
-  --lp-bg3: #161d2e;
-  --lp-text: #f0f4ff;
-  --lp-text2: #b8c2d8;
-  --lp-text3: #6b7a9a;
-  --lp-border: #1e2a42;
-  --lp-border2: #253049;
-  --lp-primary: #4a79ff;
-  --lp-primary-h: #6590ff;
-  --lp-primary-s: #141e3a;
+  --lp-bg: #04110d;
+  --lp-bg2: rgba(8, 24, 19, 0.82);
+  --lp-bg3: rgba(15, 34, 26, 0.92);
+  --lp-text: #effcf4;
+  --lp-text2: #bfd4c8;
+  --lp-text3: #7e998d;
+  --lp-border: rgba(255, 255, 255, 0.08);
+  --lp-border2: rgba(255, 255, 255, 0.14);
+  --lp-primary: #4ade80;
+  --lp-primary-h: #86efac;
+  --lp-primary-s: #10271a;
   --lp-success: #22c989;
-  --lp-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --lp-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-  --lp-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --lp-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.28);
+  --lp-shadow-md: 0 6px 18px rgba(0, 0, 0, 0.36);
+  --lp-shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.5);
 }
 
 .lp-root * {
@@ -69,7 +69,7 @@
   z-index: 100;
   background: color-mix(in srgb, var(--lp-bg2) 88%, transparent);
   border-bottom: 1px solid var(--lp-border);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(18px);
 }
 
 .lp-nav-inner,
@@ -98,7 +98,7 @@
 .lp-logo-icon {
   width: 34px;
   height: 34px;
-  border-radius: 9px;
+  border-radius: 12px;
   background: var(--lp-primary);
   display: flex;
   align-items: center;
@@ -135,7 +135,7 @@
 
 .lp-nav-link {
   padding: 6px 14px;
-  border-radius: 8px;
+  border-radius: 999px;
   font-size: 14px;
   font-weight: 500;
   color: var(--lp-text2);
@@ -163,7 +163,7 @@
 .lp-theme-btn {
   width: 36px;
   height: 36px;
-  border-radius: 9px;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,9 +196,9 @@
 
 .lp-btn-ghost {
   padding: 7px 16px;
-  border-radius: 9px;
+  border-radius: 999px;
   border: 1px solid var(--lp-border2);
-  background: transparent;
+  background: color-mix(in srgb, var(--lp-bg2) 65%, transparent);
   color: var(--lp-text2);
   font-size: 14px;
   font-weight: 500;
@@ -212,13 +212,13 @@
 .lp-btn-primary {
   padding: 8px 18px;
   gap: 6px;
-  border-radius: 9px;
+  border-radius: 999px;
   border: none;
   background: var(--lp-primary);
   color: #fff;
   font-size: 14px;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(24, 71, 237, 0.3);
+  box-shadow: 0 14px 30px rgba(22, 163, 74, 0.28);
 }
 
 .lp-btn-primary:hover {
@@ -238,7 +238,7 @@
 .lp-btn-outline-xl {
   gap: 6px;
   border: 1.5px solid var(--lp-border2);
-  background: transparent;
+  background: color-mix(in srgb, var(--lp-bg2) 40%, transparent);
   color: var(--lp-text);
 }
 
@@ -372,7 +372,9 @@
 }
 
 .lp-hero-bg {
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--lp-primary-s) 0%, transparent 70%);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, color-mix(in srgb, var(--lp-primary-s) 72%, transparent) 0%, transparent 70%),
+    radial-gradient(circle at 50% 20%, rgba(34, 197, 94, 0.08), transparent 34%);
 }
 
 .lp-hero-dots {
@@ -396,7 +398,7 @@
   background: var(--lp-primary-s);
   border: 1px solid var(--lp-border);
   color: var(--lp-primary);
-  border-radius: 100px;
+  border-radius: 999px;
   padding: 5px 14px;
   font-size: 13px;
   font-weight: 600;
@@ -432,7 +434,7 @@
   font-size: clamp(38px, 7vw, 72px);
   font-weight: 800;
   line-height: 1.08;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
   max-width: 800px;
   margin: 0 auto 24px;
 }
@@ -501,9 +503,10 @@
 .lp-mockup {
   background: var(--lp-bg2);
   border: 1px solid var(--lp-border);
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: var(--lp-shadow-lg);
+  backdrop-filter: blur(20px);
 }
 
 .lp-mockup-bar {
@@ -540,7 +543,7 @@
   margin: 0 auto;
   background: var(--lp-bg2);
   border: 1px solid var(--lp-border);
-  border-radius: 6px;
+  border-radius: 999px;
   padding: 4px 12px;
   font-size: 12px;
   color: var(--lp-text3);
@@ -585,7 +588,7 @@
 
 .lp-mockup-stat {
   background: var(--lp-bg3);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 14px 16px;
 }
 
@@ -620,7 +623,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 10px;
+  border-radius: 16px;
   border: 1px solid var(--lp-border);
 }
 
@@ -811,8 +814,9 @@
 .lp-step-card,
 .lp-testimonial-card {
   background: var(--lp-bg2);
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 24px;
+  backdrop-filter: blur(18px);
 }
 
 .lp-feature-card:hover {
@@ -839,7 +843,7 @@
 .lp-feature-icon {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  border-radius: 14px;
   margin-bottom: 16px;
 }
 
@@ -877,7 +881,7 @@
 .lp-step-icon-wrap {
   width: 52px;
   height: 52px;
-  border-radius: 14px;
+  border-radius: 16px;
   margin: 0 auto 16px;
 }
 
@@ -920,7 +924,7 @@
 .lp-split-visual {
   background: var(--lp-bg3);
   border: 1px solid var(--lp-border);
-  border-radius: 20px;
+  border-radius: 22px;
   padding: 28px;
 }
 
@@ -969,6 +973,7 @@
   border: 1px solid var(--lp-border);
   border-radius: 100px;
   padding: 10px 20px;
+  backdrop-filter: blur(16px);
 }
 
 .lp-operator-avatar,

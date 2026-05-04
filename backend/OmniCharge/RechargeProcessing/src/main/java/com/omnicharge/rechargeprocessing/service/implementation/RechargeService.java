@@ -71,11 +71,11 @@ public class RechargeService implements IRechargeService {
     }
 
     public RechargeResponseDTO addRechargeFallback(RechargeRequestDTO rechargeRequestDTO, Exception e) {
-        if (e instanceof OperatorPlanMismachedException operatorPlanMismachedException) {
-            throw operatorPlanMismachedException;
+        if (e instanceof OperatorPlanMismachedException) {
+            throw (OperatorPlanMismachedException) e;
         }
-        if (e.getCause() instanceof OperatorPlanMismachedException operatorPlanMismachedException) {
-            throw operatorPlanMismachedException;
+        if (e.getCause() instanceof OperatorPlanMismachedException) {
+            throw (OperatorPlanMismachedException) e.getCause();
         }
 
         log.error("All retry attempts exhausted for addRecharge. operatorId={}, planId={}, error={}",
